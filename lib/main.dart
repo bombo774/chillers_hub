@@ -1,6 +1,7 @@
 import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:chillers_hub/app/constant/storage_constant.dart';
+import 'package:chillers_hub/app/initial_binding.dart';
 import 'package:chillers_hub/app/theme/app_theme.dart';
 import 'package:chillers_hub/app/utils/my_custom_scroll_behavior.dart';
 import 'package:desktop_window/desktop_window.dart';
@@ -29,6 +30,7 @@ void main() async {
           scrollBehavior: MyCustomScrollBehavior(),
           debugShowCheckedModeBanner: false,
           initialRoute: AppPages.INITIAL,
+          initialBinding: InitialBinding(),
           getPages: AppPages.routes,
           theme: myTheme,
         );

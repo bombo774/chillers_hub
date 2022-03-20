@@ -34,7 +34,6 @@ class MenuButton extends GetView {
                 data: data,
                 onPressed: () {
                   onSelected(index, data);
-                  controller.selectedIndex.value = index;
                 },
               ),
             );
@@ -101,7 +100,7 @@ class _Button extends StatelessWidget {
             color: (!selected) ? Colors.grey : Theme.of(context).primaryColor,
             fontWeight: FontWeight.bold,
             letterSpacing: 0.8,
-            fontSize: 14,
+            fontSize: kSubtitleFontSize,
           ),
     );
   }

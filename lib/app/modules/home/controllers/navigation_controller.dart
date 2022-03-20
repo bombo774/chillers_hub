@@ -13,6 +13,7 @@ class NavigationController extends GetxController {
   );
 
   var selectedIndex = 0.obs;
+  var previousIndex = 0.obs;
   var isExpanded = false.obs;
   final GlobalKey<ScaffoldState> homeScaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -44,10 +45,11 @@ class NavigationController extends GetxController {
   void onSelectedMainMenu(int index, MenuButtonModel value) {
     loggerNoStack.i("Selected $index ${value.label} on  main menu");
     selectedIndex(index);
+    previousIndex = selectedIndex;
     if (index == 0) {
-      Get.toNamed("/discover");
+      Get.offAndToNamed("/discover");
     } else if (index == 4) {
-      Get.toNamed("/settings");
+      Get.offAndToNamed("/settings");
     }
   }
 
@@ -55,7 +57,22 @@ class NavigationController extends GetxController {
     if (selectedIndex.value != 4 && Get.currentRoute.contains("/settings")) {
       loggerNoStack.i(
           "incorrect displayed fixing display for route ${Get.currentRoute}");
+      previousIndex = selectedIndex;
       selectedIndex(4);
     }
+  }
+
+  void goBack() {
+    loggerNoStack.i("going back");
+    int backIndex =
+        selectedIndex.value != previousIndex.value ? previousIndex.value : 0;
+    onSelectedMainMenu(
+      backIndex,
+      MenuButtonModel(
+          activeIcon: Icons.abc,
+          icon: Icons.abc,
+          label: "",
+          totalNotification: null),
+    );
   }
 }

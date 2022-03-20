@@ -1,8 +1,5 @@
 import 'package:chillers_hub/app/constant/app_helper_constant.dart';
 import 'package:chillers_hub/app/modules/header/views/header_view.dart';
-
-import 'package:chillers_hub/app/modules/home/views/top_chillers_view.dart';
-import 'package:chillers_hub/app/modules/home/views/top_episode_view.dart';
 import 'package:chillers_hub/app/modules/home/views/discover_view.dart';
 import 'package:chillers_hub/app/utils/desktop/desktop_title_buttons/desktop_title_buttons.dart';
 import 'package:chillers_hub/app/utils/responsive/device_responsive.dart';

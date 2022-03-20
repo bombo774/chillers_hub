@@ -27,14 +27,77 @@ class DiscoverView extends GetView<DiscoverController> {
           children: [
             Padding(
               padding: const EdgeInsets.only(left: kSpacing, top: kSpacing),
-              child: Text(
-                "Discover",
-                style: GoogleFonts.poppinsTextTheme().headline6!.copyWith(
-                      color: Theme.of(context).primaryColor,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 0.8,
-                      fontSize: 16,
-                    ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Discover",
+                    style: GoogleFonts.poppinsTextTheme().headline6!.copyWith(
+                          color: Theme.of(context).primaryColor,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 0.8,
+                          fontSize: kSubtitleBigFontSize,
+                        ),
+                  ),
+                  Row(
+                    children: [
+                      Material(
+                        color: Colors.transparent,
+                        borderRadius: BorderRadius.circular(kBorderRadius),
+                        child: InkWell(
+                          borderRadius: BorderRadius.circular(kBorderRadius),
+                          onTap: () {},
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Theme.of(context)
+                                  .primaryColor
+                                  .withOpacity(0.1),
+                              borderRadius:
+                                  BorderRadius.circular(kBorderRadius),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(5),
+                              child: Icon(
+                                EvaIcons.arrowIosBackOutline,
+                                size: kIconSize,
+                                color: Theme.of(context).primaryColor,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: kSpacing),
+                      MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: Material(
+                          color: Colors.transparent,
+                          borderRadius: BorderRadius.circular(kBorderRadius),
+                          child: InkWell(
+                            borderRadius: BorderRadius.circular(kBorderRadius),
+                            onTap: () {},
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Theme.of(context)
+                                    .primaryColor
+                                    .withOpacity(0.1),
+                                borderRadius:
+                                    BorderRadius.circular(kBorderRadius),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(5),
+                                child: Icon(
+                                  EvaIcons.arrowIosForwardOutline,
+                                  size: kIconSize,
+                                  color: Theme.of(context).primaryColor,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ),
             _buildHeading(context),
@@ -97,79 +160,23 @@ class DiscoverView extends GetView<DiscoverController> {
     return Padding(
       padding: const EdgeInsets.only(left: kSpacing, right: kSpacing),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              Text(
-                controller.seletedChannelValue.value,
-                overflow: TextOverflow.ellipsis,
-                maxLines: 1,
-                style: GoogleFonts.poppinsTextTheme().headline6!.copyWith(
-                      color: Theme.of(context).primaryColor.withOpacity(0.5),
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 0.8,
-                      fontSize: 16,
-                    ),
-              ),
-              Icon(
-                EvaIcons.arrowIosDownwardOutline,
-                color: Theme.of(context).primaryColor.withOpacity(0.5),
-                size: kIconSize,
-              ),
-            ],
+          Text(
+            controller.seletedChannelValue.value,
+            overflow: TextOverflow.ellipsis,
+            maxLines: 1,
+            style: GoogleFonts.poppinsTextTheme().headline6!.copyWith(
+                  color: Theme.of(context).primaryColor.withOpacity(0.5),
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 0.8,
+                  fontSize: 16,
+                ),
           ),
-          Row(
-            children: [
-              Material(
-                color: Colors.transparent,
-                borderRadius: BorderRadius.circular(kBorderRadius),
-                child: InkWell(
-                  borderRadius: BorderRadius.circular(kBorderRadius),
-                  onTap: () {},
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColor.withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(kBorderRadius),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(5),
-                      child: Icon(
-                        EvaIcons.arrowIosBackOutline,
-                        size: kIconSize,
-                        color: Theme.of(context).primaryColor,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(width: kSpacing),
-              MouseRegion(
-                cursor: SystemMouseCursors.click,
-                child: Material(
-                  color: Colors.transparent,
-                  borderRadius: BorderRadius.circular(kBorderRadius),
-                  child: InkWell(
-                    borderRadius: BorderRadius.circular(kBorderRadius),
-                    onTap: () {},
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).primaryColor.withOpacity(0.1),
-                        borderRadius: BorderRadius.circular(kBorderRadius),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(5),
-                        child: Icon(
-                          EvaIcons.arrowIosForwardOutline,
-                          size: kIconSize,
-                          color: Theme.of(context).primaryColor,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
+          Icon(
+            EvaIcons.arrowIosDownwardOutline,
+            color: Theme.of(context).primaryColor.withOpacity(0.5),
+            size: kIconSize,
           ),
         ],
       ),

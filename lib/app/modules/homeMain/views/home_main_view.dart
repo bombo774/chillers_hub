@@ -31,7 +31,7 @@ class HomeMainView extends GetView {
         drawerEdgeDragWidth:
             !DeviceResponsive.isMobile(context) ? 0.0 : drawerSize,
         body: SlidingUpPanel(
-          controller: Get.find<PlayerController>().pannelController.value,
+          controller: Get.find<HomeMainController>().pannelController.value,
           minHeight: size.height * audioPlayerHeight,
           maxHeight: size.height,
           parallaxEnabled: true,
@@ -41,7 +41,7 @@ class HomeMainView extends GetView {
             children: [
               if (!DeviceResponsive.isMobile(context))
                 Expanded(
-                  flex: 3,
+                  flex: 2,
                   child: _buildNavigationBar(),
                 ),
               Expanded(
@@ -225,6 +225,8 @@ class HomeMainView extends GetView {
                                               fontSize: kSubtitleBigFontSize,
                                               color: Colors.white,
                                             ),
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
                                       ),
                                     )
                                   ],
@@ -246,6 +248,8 @@ class HomeMainView extends GetView {
                                               .bodyText1!
                                               .color,
                                         ),
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
                                   ),
                                   subtitle: Text(
                                     '2202, Marion St. Bass Hill, Middelburg',
@@ -258,6 +262,8 @@ class HomeMainView extends GetView {
                                               .caption!
                                               .color,
                                         ),
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
                                   ),
                                   trailing: Text(
                                     '2.3 km ' + "away",
@@ -270,6 +276,8 @@ class HomeMainView extends GetView {
                                               .caption!
                                               .color,
                                         ),
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
                                   ),
                                 ),
                               ],

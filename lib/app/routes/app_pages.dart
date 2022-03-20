@@ -1,3 +1,4 @@
+import 'package:chillers_hub/app/modules/settings/bindings/settings_binding.dart';
 import 'package:get/get.dart';
 
 import '../modules/home/bindings/home_binding.dart';

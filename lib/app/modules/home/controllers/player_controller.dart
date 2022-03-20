@@ -1,12 +1,10 @@
 import 'package:chillers_hub/app/utils/logging/logging.dart';
 import 'package:get/get.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class PlayerController extends GetxController {
-  var pannelController = PanelController().obs;
   final player = AudioPlayer();
-  final panelOpened = false.obs;
+
   var audioTitle = "Episode 334".obs;
   var audioDuration = const Duration().obs;
   var audioStreamPostion = const Duration().obs;

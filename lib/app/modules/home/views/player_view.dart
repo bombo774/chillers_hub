@@ -1,6 +1,7 @@
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
 import 'package:chillers_hub/app/constant/app_helper_constant.dart';
 import 'package:chillers_hub/app/modules/home/controllers/player_controller.dart';
+import 'package:chillers_hub/app/modules/homeMain/controllers/home_main_controller.dart';
 import 'package:chillers_hub/app/utils/logging/logging.dart';
 import 'package:chillers_hub/app/utils/responsive/device_responsive.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
@@ -289,19 +290,19 @@ class PlayerView extends GetView {
             borderRadius: BorderRadius.circular(kBorderRadius),
             child: InkWell(
               onTap: () {
-                Get.find<PlayerController>().panelOpened.value
-                    ? Get.find<PlayerController>()
+                Get.find<HomeMainController>().panelOpened.value
+                    ? Get.find<HomeMainController>()
                         .pannelController
                         .value
                         .close()
-                    : Get.find<PlayerController>()
+                    : Get.find<HomeMainController>()
                         .pannelController
                         .value
                         .open();
 
                 //
-                Get.find<PlayerController>().panelOpened(
-                    !Get.find<PlayerController>().panelOpened.value);
+                Get.find<HomeMainController>().panelOpened(
+                    !Get.find<HomeMainController>().panelOpened.value);
               },
               borderRadius: BorderRadius.circular(kBorderRadius),
               child: Container(
